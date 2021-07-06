@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: mysql_host
--- 生成日時: 2021 年 7 月 06 日 09:30
+-- 生成日時: 2021 年 7 月 06 日 10:58
 -- サーバのバージョン： 5.7.34
 -- PHP のバージョン: 7.4.20
 
@@ -36,6 +36,14 @@ CREATE TABLE `puicar_sense_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
+-- テーブルのデータのダンプ `puicar_sense_data`
+--
+
+INSERT INTO `puicar_sense_data` (`id`, `current_pui_count`, `temp`, `humidity`, `time`) VALUES
+(1, 25, 25, 25, '2021-07-06 09:58:29'),
+(2, 30, 22, 37, '2021-07-06 09:58:29');
+
+--
 -- ダンプしたテーブルのインデックス
 --
 
@@ -53,7 +61,7 @@ ALTER TABLE `puicar_sense_data`
 -- テーブルの AUTO_INCREMENT `puicar_sense_data`
 --
 ALTER TABLE `puicar_sense_data`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
