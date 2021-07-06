@@ -60,5 +60,4 @@ function getLatestTemp ($dbh){
   $sql = 'SELECT temp, humidity, time FROM puicar_sense_data ORDER BY id DESC LIMIT 1';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
-  if($stmt)
 }
