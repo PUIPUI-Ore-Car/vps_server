@@ -9,6 +9,7 @@
 
       $json = json_encode( array('method' => strtolower($_SERVER['REQUEST_METHOD']), 'keys' => 3) );
       echo $json;
+      break;
     }
     case 'post': {
       // データを受信する
@@ -18,7 +19,7 @@
       // var_dump($postData);
       $json = json_encode( $postData );
       echo $json;
-
+      break;
     }
     default: {
       // エラー
