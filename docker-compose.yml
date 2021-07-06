@@ -7,7 +7,8 @@ services:
     depends_on:
       - php
   php:
-    image: php:7-fpm
+    # image: php:7-fpm
+    build: ./docker/php
     volumes:
       - ./code:/code
       # MySQL
@@ -16,7 +17,7 @@ services:
     container_name: mysql_host
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: test_database
+      MYSQL_DATABASE: puipui
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       TZ: 'Asia/Tokyo'
