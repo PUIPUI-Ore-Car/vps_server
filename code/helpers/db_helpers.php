@@ -19,15 +19,15 @@ function get_db_connect(){
 
 function postDB_data ($dbh, $datas){
   // DBにPUI数と温湿度データを書き込む
-  $pui = $datas["pui"];
-  $temp = $datas["temp"];
+  $pui = $datas["puiCount"];
+  $temp = $datas["temperature"];
   $humidity = $datas["humidity"];
   $time = $datas["time"];
   $sql = "INSERT INTO puicar_sense_data (current_pui_count, temp, humidity, time)";
   $sql .= "VALUE (:current_pui_count, :temp, :humidity, :time)";
 
   $stmt = $dbh->prepare($sql);
-  $stmt->bindValue(':current_pui_data', $pui, PDO::PARAM_STR);
+  $stmt->bindValue(':current_pui_count', $pui, PDO::PARAM_STR);
   $stmt->bindValue(':temp', $temp, PDO::PARAM_STR);
   $stmt->bindValue(':humidity', $humidity, PDO::PARAM_STR);
   $stmt->bindValue(':time', $time, PDO::PARAM_STR);
@@ -60,4 +60,11 @@ function getLatestTemp ($dbh){
   $sql = 'SELECT temp, humidity, time FROM puicar_sense_data ORDER BY id DESC LIMIT 1';
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
+  if($stmt->rowCount() > 0){
+    $data = $stmt->fetchAll();
+    $data[0]["temp"] = intval($data[0]["temp"]);
+    $data[0]["humidity"] = intval($data[0]["humidity"]);
+    return $data[0];
+  }
+  return null;
 }
