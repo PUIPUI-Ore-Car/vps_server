@@ -11,6 +11,7 @@ function getJson($file) {
 
     return $networkData;
   }
+  postJson($file, 'debug-LAN', '127.0.0.1');
   return false;
 }
 // ネットワーク情報のJSONを書き込む
