@@ -19,4 +19,5 @@ function postJson($file, $ssid, $ipAddr) {
   $data = ["ssid" => $ssid, "ipAddr" => $ipAddr];
   $json = json_encode($data);
   file_put_contents($file, $json);
+  chmod($file, 0777);
 }
