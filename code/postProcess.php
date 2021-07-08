@@ -6,6 +6,7 @@
   function postData() {
     $data = file_get_contents('php://input');
     $postData = json_decode($data, true);
+    var_dump($postData);
 
     // JSONにネットワーク情報を書き込む
     postJson('./network.json', $postData["ssid"], $postData["ipAddr"]);
