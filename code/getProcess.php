@@ -1,5 +1,4 @@
 <?php
-  require('./config.php');
   require('./helpers/db_helpers.php');
   require('./helpers/helpers.php');
 

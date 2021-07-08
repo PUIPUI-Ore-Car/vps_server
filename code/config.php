@@ -11,7 +11,8 @@ if(date_default_timezone_get() != "Asia/Tokyo"){
 }
 
 
-error_reporting(E_ALL & ~E_NOTICE);     // E_NOTICE以外のエラーをすべて出力する
+// error_reporting(E_ALL & ~E_NOTICE);     // E_NOTICE以外のエラーをすべて出力する
+error_reporting(0);     // E_NOTICE以外のエラーをすべて出力する
 // 開発時はerror_reporting(E_ALL & ~E_NOTICE)としてE_NOTICE以外のエラーをすべて出力し、
 // 公開時はerror_reporting(0)としてエラーを出力しないようにする
 

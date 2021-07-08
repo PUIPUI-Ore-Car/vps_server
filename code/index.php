@@ -1,4 +1,6 @@
 <?php
+  require('./config.php');
+
 
   // 文字コード設定(デバッグ終了後は外す)
   header('Content-Type: application/json; charset=UTF-8');
