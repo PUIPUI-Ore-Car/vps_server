@@ -4,7 +4,9 @@
   require('./helpers/helpers.php');
 
   function postData() {
-    $postData = json_decode(file_get_contents('php://input'), true);
+    $data = file_get_contents('php://input');
+    $postData = json_decode($data, true);
+    var_dump($postData);
 
     // JSONにネットワーク情報を書き込む
     postJson('./network.json', $postData["ssid"], $postData["ipAddr"]);

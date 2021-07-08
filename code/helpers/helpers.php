@@ -16,6 +16,7 @@ function getJson($file) {
 }
 // ネットワーク情報のJSONを書き込む
 function postJson($file, $ssid, $ipAddr) {
+  var_dump($ssid);
   $data = ["ssid" => $ssid, "ipAddr" => $ipAddr];
   $json = json_encode($data);
   file_put_contents($file, $json);
