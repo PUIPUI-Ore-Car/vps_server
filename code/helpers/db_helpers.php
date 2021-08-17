@@ -75,7 +75,6 @@ function getAllTemp ($dbh){
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
   if($stmt->rowCount() > 0){
-    $retVal = null;
     $data = $stmt->fetchAll();
     for($i = 0; $i < count($data); $i++){
       $retVal[$i]["temp"] = intval($data[$i]["temp"]);
