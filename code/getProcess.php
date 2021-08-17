@@ -16,7 +16,7 @@
   function getAllData() {
     // すべてのデータを送る
     $odo = getOdoPui(get_db_connect());
-    $tempData = getLatestTemp(get_db_connect());
+    $tempData = getAllTemp(get_db_connect());
     $network = getJson('./network.json');
 
     $data = array('method' => strtolower($_SERVER['REQUEST_METHOD']), 'command' => 'AllData','odo' => $odo, 'temp' => $tempData["temp"], 'humidity' => $tempData["humidity"], 'ssid' => $network["ssid"], 'ipAddr' => $network["ipAddr"], 'time' => $tempData["time"]);
