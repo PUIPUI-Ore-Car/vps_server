@@ -75,10 +75,13 @@ function getAllTemp ($dbh){
   $stmt = $dbh->prepare($sql);
   $stmt->execute();
   if($stmt->rowCount() > 0){
+    $retVal = null;
     $data = $stmt->fetchAll();
-    $data[0]["temp"] = intval($data[0]["temp"]);
-    $data[0]["humidity"] = intval($data[0]["humidity"]);
-    return $data[0];
+    for($i = 0; $i < count($data); $i++){
+      $retVal[$i]["temp"] = intval($data[$i]["temp"]);
+      $retVal[$i]["humidity"] = intval($data[$i]["humidity"]);
+    }
+    return $retVal;
   }
   return null;
 }
