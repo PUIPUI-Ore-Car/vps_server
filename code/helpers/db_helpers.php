@@ -68,3 +68,17 @@ function getLatestTemp ($dbh){
   }
   return null;
 }
+
+function getAllTemp ($dbh){
+  // すべての温湿度データを取得する
+  $sql = 'SELECT temp, humidity, time FROM puicar_sense_data ORDER BY id DESC';
+  $stmt = $dbh->prepare($sql);
+  $stmt->execute();
+  if($stmt->rowCount() > 0){
+    $data = $stmt->fetchAll();
+    $data[0]["temp"] = intval($data[0]["temp"]);
+    $data[0]["humidity"] = intval($data[0]["humidity"]);
+    return $data[0];
+  }
+  return null;
+}
