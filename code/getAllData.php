@@ -9,7 +9,7 @@
     case 'get': {
       // データを取得する
       require('./getProcess.php');
-      getData();
+      getAllData();
       break;
     }
     case 'post': {
