@@ -22,6 +22,7 @@
     foreach($tempData as $tempHumiData){
       $tempArray[$cnt] = $tempHumiData['temp'];
       $humiArray[$cnt] = $tempHumiData['humidity'];
+      $timeArray[$cnt] = $tempHumiData['time'];
       $cnt++;
     }
 

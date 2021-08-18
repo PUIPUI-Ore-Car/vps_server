@@ -79,6 +79,7 @@ function getAllTemp ($dbh){
     for($i = 0; $i < count($data); $i++){
       $retVal[$i]["temp"] = intval($data[$i]["temp"]);
       $retVal[$i]["humidity"] = intval($data[$i]["humidity"]);
+      $retVal[$i]["time"] = $data[$i]["time"];
     }
     // var_dump($retVal);
     return $retVal;
