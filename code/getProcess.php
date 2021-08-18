@@ -26,7 +26,7 @@
       $cnt++;
     }
 
-    $data = array('method' => strtolower($_SERVER['REQUEST_METHOD']), 'command' => 'AllDataFetch','odo' => $odo, 'temp' => $tempArray, 'humidity' => $humiArray, 'ssid' => $network["ssid"], 'ipAddr' => $network["ipAddr"], 'time' => $tempData["time"]);
+    $data = array('method' => strtolower($_SERVER['REQUEST_METHOD']), 'command' => 'AllDataFetch','odo' => $odo, 'temp' => $tempArray, 'humidity' => $humiArray, 'ssid' => $network["ssid"], 'ipAddr' => $network["ipAddr"], 'time' => $timeArray);
 
     $json = json_encode( $data );
     echo $json;
